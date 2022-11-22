@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import { useObserverHook } from "../helpers/firebase";
 
 
+
 const AppRouter = () => {
 
 const { userObserver } = useObserverHook();
@@ -25,10 +26,10 @@ const { userObserver } = useObserverHook();
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Dashboard />}/>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        
+
         <Route path="/details" element={<PrivateRouter />}>
           <Route path="" element={<Details />} />
           <Route path=":id" element={<UpdateMyBlog />} />

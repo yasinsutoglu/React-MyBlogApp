@@ -21,7 +21,7 @@ export default function Details() {
   const {content, imgURL , title, date, creator, comments, likes} = state
 
   return (
-    <div className="my-5 d-flex flex-column justify-content-center align-items-center detail-gen-div">
+    <div className="mt-5 py-4 d-flex flex-column justify-content-center align-items-center detail-gen-div">
       <h2 style={{ color: "rgb(25,118,210)" }}>BLOG DETAILS</h2>
       <Card sx={{ width: "60%" }} className="details-div">
         <CardHeader

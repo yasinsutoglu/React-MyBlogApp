@@ -20,13 +20,13 @@ const filteredBlogs = useMemo(()=>{
   
 if(loading && !error){
   return (
-    <div className='d-flex justify-content-center align-items-center' style={{marginTop:"10rem"}}>
-      <img src={loadgif} alt="gif" />
+    <div className='d-flex justify-content-center align-items-center' style={{height:"100vh"}}>
+      <img src={loadgif} alt="gif"/>
     </div>    
   ) 
 }else if(!loading && !error){
   return (
-    <div className="container d-flex justify-content-center gap-5 flex-wrap mt-5">
+    <div className="container d-flex justify-content-center gap-5 flex-wrap mt-2 py-4">
       {filteredBlogs?.map((blog) => {
         return <BlogCard key={blog.id} blog={blog} />;
       })}
