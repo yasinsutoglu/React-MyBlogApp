@@ -1,16 +1,22 @@
 // import { useSelector } from 'react-redux'
 import BlogCard from '../components/BlogCard'
-import { useReadBlogs } from '../helpers/firebase'
+import { useObserverHook, useReadBlogs } from '../helpers/firebase'
 import loadgif from "../assets/imgs/load.gif";
 import { useSelector } from 'react-redux';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 
 
 const Dashboard = () => { 
 
   const {blogs, loading,  error} = useReadBlogs()
-  const {search} = useSelector(state => state?.blog)  
+  const {search} = useSelector(state => state?.blog) 
+  
+  const {userObserver} = useObserverHook();
+
+  useEffect(()=>{
+    userObserver();
+  },[])
 
 const filteredBlogs = useMemo(()=>{
     return blogs?.filter((item)=> item.title.toLowerCase().includes(search?.toLowerCase())) 
