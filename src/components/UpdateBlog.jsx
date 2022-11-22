@@ -5,7 +5,7 @@ import { deleteMyBlog } from '../helpers/firebase';
 import { useNavigate } from 'react-router-dom';
 
 
-const UpdateBlog = ({ id, content, imgURL, title, date, creator }) => {
+const UpdateBlog = ({ id, content, imgURL, title, date, creator, comments,likes }) => {
 
   const navigate = useNavigate(); 
 
@@ -15,7 +15,7 @@ const UpdateBlog = ({ id, content, imgURL, title, date, creator }) => {
   }
 
   const handleUpdate = ()=>{
-    navigate(`/details/${id}`, {state :{ id, content, imgURL, title, date, creator } })
+    navigate(`/details/${id}`, {state :{ id, content, imgURL, title, date, creator,comments,likes } })
   }
 
   return (

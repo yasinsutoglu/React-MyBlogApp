@@ -15,11 +15,9 @@ export default function BlogForm() {
   const navigate = useNavigate();
 
   const {state} = useLocation()
-  
-  const { id } = state
 
   const [newBlog, setNewBlog] = React.useState({
-    id:id,
+    id:state.id,
     title: state.title,
     imgURL: state.imgURL,
     content: state.content,

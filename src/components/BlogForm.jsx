@@ -14,7 +14,7 @@ import {useSelector} from "react-redux"
 export default function BlogForm() {
 
   const navigate = useNavigate()
-  const [blog,setBlog] = React.useState({title:"", imgURL:"", content:"", date:"", creator:"", comments:[""], likes:0})
+  const [blog,setBlog] = React.useState({title:"", imgURL:"", content:"", date:"", creator:"", comments:["initial"], likes:0})
 
   const {title, imgURL , content} = blog;
   const {currentUser} = useSelector(state => state?.auth)

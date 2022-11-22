@@ -43,7 +43,7 @@ export default function Details() {
         <CardContent sx={{ textAlign: "justify" }}>
           <h5 className="text-primary">{title}</h5>
           <Box sx={{ height:"auto" }}>
-            <Typography  variant="string" paragraph="true" color="text.secondary">{content}</Typography>
+            <Typography  variant="string" paragraph={true} color="text.secondary">{content}</Typography>
           </Box>
         </CardContent> 
 

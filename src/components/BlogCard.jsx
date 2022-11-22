@@ -89,7 +89,7 @@ export default function BlogCard({blog}) {
 
         <span>{likes}</span>
 
-        <IconButton aria-label="comment" onClick={()=>{!currentUser && toastWarnNotify("Please Login to Comment!")}}>
+        <div role="button" aria-label="comment" onClick={()=>{!currentUser && toastWarnNotify("Please Login to Comment!")}} className="mx-1">
           {comments?.length - 1 > 0 && (
             <ChatBubbleOutlineIcon
               data-bs-toggle="modal"
@@ -105,6 +105,7 @@ export default function BlogCard({blog}) {
               data-bs-target={`#${blog.id}`}
             />
           )}
+
           {currentUser && (
             <div
               className="modal fade"
@@ -154,7 +155,7 @@ export default function BlogCard({blog}) {
               </div>
             </div>
           )}
-        </IconButton>
+        </div>
         <span>{comments?.length - 1}</span>
       </CardActions>
     </Card>
